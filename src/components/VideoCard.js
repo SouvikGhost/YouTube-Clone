@@ -6,7 +6,7 @@ const VideoCard = ({info}) => {
     <div className="shadow-lg w-64 rounded-lg">
         <img className="rounded-lg" src={thumbnails.medium.url} alt="videocardlogo" />
         <ul className="p-3">
-            <li className="font-bold py-2">{title}</li>
+            <li className="font-bold py-2">{title.slice(0,23)}...</li>
             <li className="py-1">{channelTitle}</li>
             <li>{statistics.viewCount} Views</li>
         </ul>

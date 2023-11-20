@@ -17,7 +17,7 @@ const VideoBackground = () => {
     <div className="ml-8 flex justify-between flex-wrap">
     
 
-      {videos.map((video)=> <Link to={"watch?v="+video.id}> <VideoCard key={video.id} info={video}/>  </Link>)}
+      {videos.map((video)=> <Link key={video.id} to={"watch?v="+video.id}> <VideoCard  info={video}/>  </Link>)}
      
 
     </div>
