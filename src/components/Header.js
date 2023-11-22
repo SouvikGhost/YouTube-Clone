@@ -1,28 +1,40 @@
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { toggleMenu } from "../utils/appSlice"
 import { useEffect, useState } from "react"
 import { YOUTUBE_SEARCH_API_KEY } from "../utils/constants"
 import { FaSearch } from "react-icons/fa";
+import { cacheResult } from "../utils/searchSlice";
 
 
 const Header = () => {
    const [search , setSearch]=useState("")
    const [result,setResults]=useState([])
    const [showSuggestion,setShowSuggestion]=useState(false)
-   console.log(search);
+   const searchCache=useSelector(store=>store.search)
+   // console.log(search);
 
 
    const getResultsFromInput= async()=>{
       const data = await fetch(YOUTUBE_SEARCH_API_KEY+search);
       const josnData=await data.json();
-      console.log(josnData);
+      console.log("API called :---" +josnData);
       setResults(josnData[1])
+      dispatch(cacheResult({
+         [search]:josnData[1],
+      }))
    }
 
 
    useEffect(()=>{
       const timer =setTimeout(()=>{
-         getResultsFromInput()
+         if(searchCache[search]){
+            setResults(searchCache[search])
+            
+         }
+         else{
+
+            getResultsFromInput()
+         }
 
       },200) 
       return ()=>{
