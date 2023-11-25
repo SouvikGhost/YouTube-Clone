@@ -14,7 +14,7 @@ const VideoBackground = () => {
     setVideos(jsonData.items)
   }
   return (
-    <div className="ml-8 flex justify-between flex-wrap">
+    <div className="ml-8 flex justify-between flex-wrap ">
     
 
       {videos.map((video)=> <Link key={video.id} to={"watch?v="+video.id}> <VideoCard  info={video}/>  </Link>)}

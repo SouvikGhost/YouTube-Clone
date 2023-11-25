@@ -3,9 +3,15 @@ import Sidebar from "./Sidebar"
 
 const Body = () => {
   return (
-    <div className="flex">
+    <div className="flex ">
+      
+
         <Sidebar/>
+      
+      
+
        <Outlet/>
+     
     </div>
   )
 }

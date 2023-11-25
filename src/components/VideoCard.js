@@ -3,7 +3,7 @@ const VideoCard = ({info}) => {
     const {snippet ,statistics}=info
     const {thumbnails,title,channelTitle}=snippet
   return (
-    <div className="shadow-lg w-64 rounded-lg">
+    <div className="shadow-lg w-64 rounded-lg text-white">
         <img className="rounded-lg" src={thumbnails.medium.url} alt="videocardlogo" />
         <ul className="p-3">
             <li className="font-bold py-2">{title.slice(0,23)}...</li>

@@ -117,16 +117,17 @@ const data=[
 ]
 
 
-const OneComent=({data})=>{
-    const {name,text}=data
+export const OneComent=({data})=>{
+    if(!data) return null;
+    const {snippet}=data
     return (
-        <div className="bg-gray-300 p-2 rounded-lg mt-3">
+        <div className="bg-gray-300 p-2 rounded-lg mt-3 ">
 
         <div className="flex ">
             <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" alt="logo" className="h-6 " />
-            <h1 className="text-base font-bold text-black ml-2">{name}</h1>
+            <h1 className="text-base font-semibold text-black ml-2">{snippet?.topLevelComment?.snippet?.authorDisplayName}</h1>
         </div>
-            <p className="pt-1">{text}</p>
+            <p className="pt-1">{snippet?.topLevelComment?.snippet?.textDisplay}</p>
         </div>
 
     )
@@ -135,7 +136,7 @@ const OneComent=({data})=>{
 const CommentsList=({data})=>{
     return(
        
-        <div>
+        <div className="">
             {data.map((comment,index)=>
             <div key={index}>
 
@@ -159,7 +160,7 @@ const Comments = () => {
   return (
     <>
     <div>
-        <h1 className="text-xl font-bold py-5">Comments:---</h1>
+        <h1 className="text-xl font-bold py-5 ">Comments:---</h1>
     </div>
        <CommentsList data={data}/>
     </>

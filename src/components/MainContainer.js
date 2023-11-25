@@ -3,7 +3,7 @@ import VideoBackground from "./VideoBackground"
 
 const MainContainer = () => {
   return (
-    <div>
+    <div className="bg-black">
       <ButtonList/>
       <VideoBackground/>
     </div>

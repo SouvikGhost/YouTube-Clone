@@ -17,7 +17,7 @@ const Header = () => {
    const getResultsFromInput= async()=>{
       const data = await fetch(YOUTUBE_SEARCH_API_KEY+search);
       const josnData=await data.json();
-      console.log("API called :---" +josnData);
+      // console.log("API called :---" +josnData);
       setResults(josnData[1])
       dispatch(cacheResult({
          [search]:josnData[1],
