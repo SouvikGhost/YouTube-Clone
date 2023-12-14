@@ -1,8 +1,8 @@
-export const GOOGLE_API_KEY="AIzaSyBasw0CDBXuanobmRsk4ERhAWN44cEO_v0";
+export const GOOGLE_API_KEY="<GOOGLE API KEY>";
 
-export const YOUTUBE_VIDEO_API_KEY="https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=50&chart=mostPopular&regionCode=IN&key=" +GOOGLE_API_KEY;
+export const YOUTUBE_VIDEO_API_KEY="YouTube Videos API KEY" +GOOGLE_API_KEY;
 
-export const YOUTUBE_SEARCH_API_KEY="http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
+export const YOUTUBE_SEARCH_API_KEY="<Search API KEY>"
 
 
 
